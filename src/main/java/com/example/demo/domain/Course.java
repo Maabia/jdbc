@@ -17,10 +17,17 @@ import javax.persistence.Id;
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long courseId;
+    private int courseId;
     private String title;
     private String description;
     private String link;
+
+    public Course(String title, String description, String link) {
+        this.title = title;
+        this.description = description;
+        this.link = link;
+    }
+
 
     @Override
     public String toString() {
@@ -31,6 +38,4 @@ public class Course {
                 ", link='" + link + '\'' +
                 '}';
     }
-
-
 }
